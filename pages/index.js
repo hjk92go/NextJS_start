@@ -1,17 +1,21 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css';
+import Link from 'next/link'; //next에서 link가져옴
+import Layout from '../components/layout';
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    
+    //home라는 값을 넣어주면 home={true}와 같은 의미
+    <Layout home> 
       <Head>
-        <title>Create Next App</title>
+        <title>Start Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+         Read <Link href="/posts/first-post"> this page! </Link> {/**도메인 창에서 연결되었음을 확인할 수 있다. */}
         </h1>
 
         <p className={styles.description}>
@@ -110,6 +114,6 @@ export default function Home() {
           box-sizing: border-box;
         }
       `}</style>
-    </div>
+    </Layout>
   )
 }
