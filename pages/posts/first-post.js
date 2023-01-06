@@ -3,7 +3,7 @@
 
 import Link from 'next/link'; //next에서 link가져옴
 import Image from 'next/image';
-import Layout from './../../components/layout';
+import Layout from '../../components/layout';
 
 
 

@@ -1,22 +1,44 @@
 import Head from 'next/head';
 import styles from './layout.module.css';
+import Image from 'next/image';
 
-const Layout = ( { children, home } ) => {
+const Layout = ({children, home}) => {
     return ( 
         <div className={styles.container}>
             <Head>
                 <link rel="icon" href="/favicon.ico" />
-                <title>Layout Next</title>
+                <title>layout next</title>
             </Head>
             <header>
-                {/** 홈값이 있다면 화면을 띄워주고, 아니면 다른내용 띄울예정, 삼항연산자이용*/}
-                { home ? <h1>Home</h1> : <h1>Not Home</h1> }
+                { home ? 
+                <div>
+                    <Image
+                    src='/images/profile.jpg'
+                    height={144}
+                    width={144}
+                    alt="프로필사진"
+                    ></Image>
+                    <h2>Green blog</h2>
+                </div>
+                :                 <div>
+                <Image
+                src='/images/profile.jpg'
+                height={100}
+                width={100}
+                alt="프로필사진"
+                ></Image>
+                <h2>Green blog post</h2>
+            </div>
+            }
             </header>
-            <div>{ children }</div>
+
+            <div>{children}</div>
+            
+            <footer>
+                <p>개인 블로그입니다</p>
+            </footer>
         </div>
-
-
-     );
+    );
 }
- 
+
 export default Layout;
